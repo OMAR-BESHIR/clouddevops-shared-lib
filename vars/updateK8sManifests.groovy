@@ -6,7 +6,7 @@ def call(String repoUrl, String imageName, String tag, String gitToken) {
 
       cd manifests
 
-      sed -i 's|image: .*|image: ${imageName}:${tag}|' deployment.yaml
+      sed -i 's|image: .*|image: ${imageName}:${tag}|' deployment.yml
 
       git config user.email "jenkins@local"
       git config user.name "jenkins"
