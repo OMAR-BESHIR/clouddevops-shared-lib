@@ -1,7 +1,9 @@
-def call(String imageName, String tag, creds) {
+def call(String imageName, String tag, String user, String pass) {
     sh """
-    echo ${creds_PSW} | docker login -u ${creds_USR} --password-stdin
-    docker push ${imageName}:${tag}
+      echo '${pass}' | docker login -u '${user}' --password-stdin
+      docker push ${imageName}:${tag}
+      docker logout
     """
 }
+
 
